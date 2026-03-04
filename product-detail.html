@@ -3,126 +3,80 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Product Details - WY Cleaning Products</title>
+    <title>Product Detail - WY Cleaning Products</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="css/styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <a href="index.html" class="logo">
-                <span class="logo-wy">WY</span>
-                <span class="logo-text">Cleaning</span>
-            </a>
-            
-            <ul class="nav-links" id="navLinks">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="shop.html">Webshop</a></li>
-                <li><a href="about.html">Over Ons</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-            
-            <div class="nav-actions">
-                <button class="cart-icon" id="cartIcon">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
-                    <span class="cart-count" id="cartCount">0</span>
-                </button>
-                <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
-                    <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
-                    <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
-                </button>
-                <button class="hamburger" id="hamburger" aria-label="Menu">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
-            </div>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <nav class="nav">
+                <a href="index.html" class="logo">
+                    <div class="logo-icon"><i class="fas fa-spray-can"></i></div>
+                    <span>WY Cleaning</span>
+                </a>
+                <ul class="nav-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li class="has-dropdown">
+                        <a href="#" class="dropdown-toggle">Producten <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="shop.html"><i class="fas fa-car-side"></i> Exterieur</a></li>
+                            <li><a href="shop.html"><i class="fas fa-chair"></i> Interieur</a></li>
+                            <li><a href="shop.html"><i class="fas fa-shield-alt"></i> Bescherming</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="shop.html">Webshop</a></li>
+                    <li><a href="about.html">Over Ons</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+                <div class="nav-actions">
+                    <button class="cart-btn" id="cartBtn">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-count" id="cartCount">0</span>
+                    </button>
+                    <button class="mobile-menu-btn" id="mobileMenuBtn"><i class="fas fa-bars"></i></button>
+                </div>
+            </nav>
         </div>
+    </header>
+
+    <!-- Mobile Navigation -->
+    <div class="mobile-nav-overlay" id="mobileNavOverlay"></div>
+    <nav class="mobile-nav" id="mobileNav">
+        <div class="mobile-nav-header">
+            <a href="index.html" class="logo">
+                <div class="logo-icon"><i class="fas fa-spray-can"></i></div>
+                <span>WY Cleaning</span>
+            </a>
+            <button class="mobile-nav-close" id="mobileNavClose"><i class="fas fa-times"></i></button>
+        </div>
+        <ul class="mobile-nav-menu">
+            <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+            <li><a href="shop.html"><i class="fas fa-shopping-cart"></i> Webshop</a></li>
+            <li><a href="about.html"><i class="fas fa-info-circle"></i> Over Ons</a></li>
+            <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
+        </ul>
     </nav>
 
-    <!-- Product Detail Header -->
-    <section class="page-header page-header-sm">
-        <div class="container">
-            <div class="breadcrumb">
-                <a href="index.html">Home</a>
-                <span>/</span>
-                <a href="shop.html">Webshop</a>
-                <span>/</span>
-                <span id="breadcrumbProductName">Product</span>
-            </div>
-        </div>
-    </section>
-
     <!-- Product Detail Section -->
-    <section class="product-detail-section">
+    <section class="products-section" style="padding-top: 120px;">
         <div class="container">
-            <div class="product-detail-grid">
-                <!-- Product Image -->
-                <div class="product-detail-image">
-                    <div class="product-image-wrapper glass" id="productImageContainer">
-                        <div class="product-emoji" id="productImage">🧴</div>
-                    </div>
-                </div>
-                
-                <!-- Product Info -->
-                <div class="product-detail-info">
-                    <span class="product-category" id="productCategory">Exterieur</span>
-                    <h1 class="product-title" id="productName">Product Naam</h1>
-                    <div class="product-rating">
-                        <div class="stars">
-                            <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
-                        </div>
-                        <span class="rating-text">4.9 (127 beoordelingen)</span>
-                    </div>
-                    <p class="product-price" id="productPrice">€0,00</p>
-                    <p class="product-description" id="productDescription">Product beschrijving...</p>
-                    
-                    <div class="product-features">
-                        <h4>Kenmerken</h4>
-                        <ul id="productFeatures">
-                            <li>✓ Professionele kwaliteit</li>
-                            <li>✓ Eenvoudig in gebruik</li>
-                            <li>✓ Langdurige bescherming</li>
-                        </ul>
-                    </div>
-                    
-                    <div class="product-actions">
-                        <div class="quantity-selector">
-                            <button class="qty-btn" id="qtyMinus">-</button>
-                            <input type="number" value="1" min="1" max="99" id="qtyInput" readonly>
-                            <button class="qty-btn" id="qtyPlus">+</button>
-                        </div>
-                        <button class="btn btn-primary btn-lg" id="addToCartBtn">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
-                            <span>In Winkelwagen</span>
-                        </button>
-                    </div>
-                    
-                    <div class="product-meta">
-                        <div class="meta-item">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path></svg>
-                            <span>Gratis verzending vanaf €50</span>
-                        </div>
-                        <div class="meta-item">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
-                            <span>Voor 17:00 besteld, morgen in huis</span>
-                        </div>
-                    </div>
-                </div>
+            <div id="productDetail">
+                <!-- Product loaded by JS -->
             </div>
-        </div>
-    </section>
-
-    <!-- Related Products -->
-    <section class="related-products-section">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Gerelateerde Producten</h2>
-                <p class="section-subtitle">Bekijk ook deze aanraders</p>
-            </div>
-            <div class="products-grid" id="relatedProducts">
-                <!-- Related products loaded by JS -->
+            
+            <!-- Related Products -->
+            <div style="margin-top: 4rem;">
+                <div class="section-header">
+                    <span class="section-tag">Bekijk ook</span>
+                    <h2 class="section-title">Gerelateerde Producten</h2>
+                </div>
+                <div class="products-grid" id="relatedProducts">
+                    <!-- Related products loaded by JS -->
+                </div>
             </div>
         </div>
     </section>
@@ -133,13 +87,13 @@
             <div class="footer-grid">
                 <div class="footer-brand">
                     <a href="index.html" class="logo">
-                        <span class="logo-wy">WY</span>
-                        <span class="logo-text">Cleaning</span>
+                        <div class="logo-icon"><i class="fas fa-spray-can"></i></div>
+                        <span>WY Cleaning</span>
                     </a>
                     <p>Premium auto verzorgingsproducten voor de ware liefhebber.</p>
                 </div>
                 <div class="footer-links">
-                    <h4>Pagina's</h4>
+                    <h4 class="footer-title">Pagina's</h4>
                     <ul>
                         <li><a href="index.html">Home</a></li>
                         <li><a href="shop.html">Webshop</a></li>
@@ -147,11 +101,20 @@
                         <li><a href="contact.html">Contact</a></li>
                     </ul>
                 </div>
-                <div class="footer-contact">
-                    <h4>Contact</h4>
+                <div class="footer-links">
+                    <h4 class="footer-title">Producten</h4>
                     <ul>
-                        <li><span>info@wycleaning.nl</span></li>
-                        <li><span>Nederland</span></li>
+                        <li><a href="shop.html">Exterieur</a></li>
+                        <li><a href="shop.html">Interieur</a></li>
+                        <li><a href="shop.html">Bescherming</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4 class="footer-title">Service</h4>
+                    <ul>
+                        <li><a href="#">Verzending</a></li>
+                        <li><a href="#">Retouren</a></li>
+                        <li><a href="#">FAQ</a></li>
                     </ul>
                 </div>
             </div>
@@ -165,8 +128,8 @@
     <div class="cart-overlay" id="cartOverlay"></div>
     <aside class="cart-sidebar" id="cartSidebar">
         <div class="cart-header">
-            <h3>Winkelwagen</h3>
-            <button class="cart-close" id="cartClose">&times;</button>
+            <h3><i class="fas fa-shopping-cart"></i> Winkelwagen</h3>
+            <button class="cart-close" id="cartClose"><i class="fas fa-times"></i></button>
         </div>
         <div class="cart-items" id="cartItems"></div>
         <div class="cart-footer">
@@ -174,11 +137,89 @@
                 <span>Totaal</span>
                 <span class="cart-total-price" id="cartTotal">€0,00</span>
             </div>
-            <button class="btn btn-primary btn-full">Afrekenen</button>
-            <button class="btn btn-text" id="continueShopping">Verder winkelen</button>
+            <button class="btn btn-primary btn-full"><i class="fas fa-credit-card"></i> Afrekenen</button>
         </div>
     </aside>
 
     <script src="js/main.js"></script>
+    <script>
+        // Load product detail
+        const urlParams = new URLSearchParams(window.location.search);
+        const productId = parseInt(urlParams.get('id'));
+        
+        if (productId) {
+            const product = products.find(p => p.id === productId);
+            if (product) {
+                document.getElementById('productDetail').innerHTML = `
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem;">
+                        <div style="background: linear-gradient(135deg, var(--gray-50) 0%, var(--gray-100) 100%); border-radius: 24px; aspect-ratio: 1; display: flex; align-items: center; justify-content: center; font-size: 10rem;">
+                            ${product.emoji}
+                        </div>
+                        <div>
+                            <div style="font-size: 0.875rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: var(--accent); margin-bottom: 0.5rem;">${getCategoryName(product.category)}</div>
+                            <h1 style="font-size: 2.5rem; margin-bottom: 1rem;">${product.name}</h1>
+                            <div style="font-size: 2rem; font-weight: 800; color: var(--accent); margin-bottom: 1.5rem;">€${product.price.toFixed(2).replace('.', ',')}</div>
+                            <p style="color: var(--gray-600); margin-bottom: 1.5rem; line-height: 1.8;">${product.description}</p>
+                            
+                            <div style="background: var(--gray-50); border-radius: 16px; padding: 1.5rem; margin-bottom: 1.5rem;">
+                                <h4 style="margin-bottom: 1rem;"><i class="fas fa-list-check" style="color: var(--accent);"></i> Kenmerken</h4>
+                                <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.5rem;">
+                                    <li style="display: flex; align-items: center; gap: 0.5rem;"><i class="fas fa-check" style="color: var(--success);"></i> Kant-en-klaar product</li>
+                                    <li style="display: flex; align-items: center; gap: 0.5rem;"><i class="fas fa-check" style="color: var(--success);"></i> Professionele kwaliteit</li>
+                                    <li style="display: flex; align-items: center; gap: 0.5rem;"><i class="fas fa-check" style="color: var(--success);"></i> Makkelijk in gebruik</li>
+                                    <li style="display: flex; align-items: center; gap: 0.5rem;"><i class="fas fa-check" style="color: var(--success);"></i> Veilig voor alle oppervlakten</li>
+                                </ul>
+                            </div>
+                            
+                            <div style="display: flex; gap: 1rem; align-items: center;">
+                                <div class="quantity-selector" style="display: flex; align-items: center; border: 1px solid var(--gray-200); border-radius: 10px; overflow: hidden;">
+                                    <button class="quantity-btn" onclick="updateDetailQty(-1)" style="width: 40px; height: 44px; background: var(--gray-50); border: none; cursor: pointer;"><i class="fas fa-minus"></i></button>
+                                    <input type="text" id="qtyInput" value="1" readonly style="width: 50px; text-align: center; border: none; font-weight: 600;">
+                                    <button class="quantity-btn" onclick="updateDetailQty(1)" style="width: 40px; height: 44px; background: var(--gray-50); border: none; cursor: pointer;"><i class="fas fa-plus"></i></button>
+                                </div>
+                                <button class="btn btn-primary btn-large" onclick="addDetailToCart(${product.id})" style="flex: 1;">
+                                    <i class="fas fa-shopping-cart"></i> In winkelwagen
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                
+                // Load related products
+                const related = products.filter(p => p.category === product.category && p.id !== product.id).slice(0, 3);
+                if (related.length === 0) {
+                    related.push(...products.filter(p => p.id !== product.id).slice(0, 3));
+                }
+                
+                document.getElementById('relatedProducts').innerHTML = related.map(p => `
+                    <div class="product-card">
+                        <div class="product-image">${p.emoji}${p.badge ? `<span class="product-badge">${p.badge}</span>` : ''}</div>
+                        <div class="product-content">
+                            <div class="product-category">${getCategoryName(p.category)}</div>
+                            <h3 class="product-name">${p.name}</h3>
+                            <p class="product-description">${p.description}</p>
+                            <div class="product-footer">
+                                <span class="product-price">€${p.price.toFixed(2).replace('.', ',')}</span>
+                                <button class="btn-add-cart" onclick="addToCart(${p.id})"><i class="fas fa-plus"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                `).join('');
+            }
+        }
+        
+        function updateDetailQty(change) {
+            const input = document.getElementById('qtyInput');
+            if (input) {
+                const val = parseInt(input.value) + change;
+                if (val >= 1) input.value = val;
+            }
+        }
+        
+        function addDetailToCart(id) {
+            const qty = parseInt(document.getElementById('qtyInput')?.value || 1);
+            addToCart(id, qty);
+        }
+    </script>
 </body>
 </html>

@@ -3,165 +3,217 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WY Cleaning Products - Premium Auto Verzorging</title>
+    <meta name="description" content="WY Cleaning Products - Premium auto reinigingsproducten voor professionele detailing resultaten.">
+    <title>WY Cleaning | Premium Auto Detailing Producten</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="css/styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <a href="index.html" class="logo">
-                <span class="logo-wy">WY</span>
-                <span class="logo-text">Cleaning</span>
-            </a>
-            
-            <ul class="nav-links" id="navLinks">
-                <li><a href="index.html" class="active">Home</a></li>
-                <li><a href="shop.html">Webshop</a></li>
-                <li><a href="about.html">Over Ons</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-            
-            <div class="nav-actions">
-                <a href="shop.html" class="cart-icon" id="cartIcon">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
-                    <span class="cart-count" id="cartCount">0</span>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <nav class="nav">
+                <a href="index.html" class="logo">
+                    <div class="logo-icon"><i class="fas fa-spray-can"></i></div>
+                    <span>WY Cleaning</span>
                 </a>
-                <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
-                    <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
-                    <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+                
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li class="has-dropdown">
+                        <a href="#" class="dropdown-toggle">Producten <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="shop.html"><i class="fas fa-car-side"></i> Exterieur</a></li>
+                            <li><a href="shop.html"><i class="fas fa-chair"></i> Interieur</a></li>
+                            <li><a href="shop.html"><i class="fas fa-shield-alt"></i> Bescherming</a></li>
+                            <li><a href="shop.html"><i class="fas fa-box-open"></i> Alle Producten</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="shop.html">Webshop</a></li>
+                    <li><a href="about.html">Over Ons</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+                
+                <div class="nav-actions">
+                    <button class="cart-btn" id="cartBtn">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-count" id="cartCount">0</span>
+                    </button>
+                    <button class="mobile-menu-btn" id="mobileMenuBtn">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Mobile Navigation -->
+    <div class="mobile-nav-overlay" id="mobileNavOverlay"></div>
+    <nav class="mobile-nav" id="mobileNav">
+        <div class="mobile-nav-header">
+            <a href="index.html" class="logo">
+                <div class="logo-icon"><i class="fas fa-spray-can"></i></div>
+                <span>WY Cleaning</span>
+            </a>
+            <button class="mobile-nav-close" id="mobileNavClose">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <ul class="mobile-nav-menu">
+            <li><a href="index.html" class="active"><i class="fas fa-home"></i> Home</a></li>
+            <li>
+                <button class="mobile-dropdown-toggle" id="mobileDropdownToggle">
+                    Producten <i class="fas fa-chevron-down"></i>
                 </button>
-                <button class="hamburger" id="hamburger" aria-label="Menu">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
-            </div>
+                <ul class="mobile-dropdown-menu" id="mobileDropdownMenu">
+                    <li><a href="shop.html"><i class="fas fa-car-side"></i> Exterieur</a></li>
+                    <li><a href="shop.html"><i class="fas fa-chair"></i> Interieur</a></li>
+                    <li><a href="shop.html"><i class="fas fa-shield-alt"></i> Bescherming</a></li>
+                </ul>
+            </li>
+            <li><a href="shop.html"><i class="fas fa-shopping-cart"></i> Webshop</a></li>
+            <li><a href="about.html"><i class="fas fa-info-circle"></i> Over Ons</a></li>
+            <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
+        </ul>
+        <div class="mobile-nav-footer">
+            <a href="shop.html" class="btn btn-primary btn-full">
+                <i class="fas fa-shopping-bag"></i> Bekijk Webshop
+            </a>
         </div>
     </nav>
 
     <!-- Hero Section -->
     <section class="hero">
-        <div class="hero-bg"></div>
-        <div class="hero-particles"></div>
-        <div class="hero-content">
-            <span class="hero-badge">✨ Premium Auto Verzorging</span>
-            <h1 class="hero-title">
-                <span class="gradient-text">Professionele</span>
-                <br>Auto Reiniging
-            </h1>
-            <p class="hero-subtitle">Ontdek onze premium lijn van auto reinigingsproducten. Professionele resultaten, eenvoudig thuis te gebruiken.</p>
-            <div class="hero-actions">
-                <a href="shop.html" class="btn btn-primary">
-                    <span>Bekijk Producten</span>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-                </a>
-                <a href="about.html" class="btn btn-secondary">Meer Over Ons</a>
-            </div>
-            <div class="hero-stats">
-                <div class="stat">
-                    <span class="stat-number">6</span>
-                    <span class="stat-label">Premium Producten</span>
+        <div class="hero-pattern"></div>
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <i class="fas fa-star"></i> #1 Auto Detailing Producten in Nederland
                 </div>
-                <div class="stat">
-                    <span class="stat-number">500+</span>
-                    <span class="stat-label">Tevreden Klanten</span>
+                <h1 class="hero-title">
+                    Professionele <span class="highlight">car care</span> voor iedereen
+                </h1>
+                <p class="hero-tagline">
+                    Ontdek onze premium lijn van auto reinigingsproducten. Professionele resultaten, eenvoudig thuis te gebruiken.
+                </p>
+                <div class="hero-buttons">
+                    <a href="shop.html" class="btn btn-primary btn-large">
+                        <i class="fas fa-shopping-bag"></i> Bekijk Producten
+                    </a>
+                    <a href="about.html" class="btn btn-secondary btn-large">
+                        <i class="fas fa-info-circle"></i> Meer Over Ons
+                    </a>
                 </div>
-                <div class="stat">
-                    <span class="stat-number">100%</span>
-                    <span class="stat-label">Nederlands</span>
+                <div class="hero-trust">
+                    <div class="trust-item">
+                        <i class="fas fa-truck"></i>
+                        <span>Gratis verzending vanaf €50</span>
+                    </div>
+                    <div class="trust-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>100% Nederlandse kwaliteit</span>
+                    </div>
+                    <div class="trust-item">
+                        <i class="fas fa-undo"></i>
+                        <span>30 dagen retourrecht</span>
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="hero-visual">
-            <div class="hero-card glass">
-                <div class="hero-card-icon">🚗</div>
-                <div class="hero-card-text">
-                    <span class="hero-card-label">Bestseller</span>
-                    <span class="hero-card-name">Wash & Shine</span>
-                    <span class="hero-card-price">€24,99</span>
+        <div class="hero-image">
+            <div class="hero-product-card">
+                <div class="hero-product-icon">🚗</div>
+                <span class="hero-product-label">Bestseller</span>
+                <div class="hero-product-name">Wash & Shine</div>
+                <div class="hero-product-price">€24,99</div>
+            </div>
+        </div>
+        <a href="#usp" class="scroll-down">
+            <i class="fas fa-chevron-down"></i>
+        </a>
+    </section>
+
+    <!-- USP Section -->
+    <section class="usp-section" id="usp">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Waarom WY Cleaning</span>
+                <h2 class="section-title">De beste keuze voor jouw auto</h2>
+                <p class="section-subtitle">Kwaliteit en service staan bij ons voorop</p>
+            </div>
+            <div class="usp-grid">
+                <div class="usp-card">
+                    <i class="fas fa-award"></i>
+                    <div>
+                        <h3>Premium Kwaliteit</h3>
+                        <p>Professionele producten voor thuisgebruik</p>
+                    </div>
+                </div>
+                <div class="usp-card">
+                    <i class="fas fa-flask"></i>
+                    <div>
+                        <h3>Kant-en-klaar</h3>
+                        <p>Geen verdunnen nodig, direct gebruiksklaar</p>
+                    </div>
+                </div>
+                <div class="usp-card">
+                    <i class="fas fa-leaf"></i>
+                    <div>
+                        <h3>Milieuvriendelijk</h3>
+                        <p>Biologisch afbreekbare formules</p>
+                    </div>
+                </div>
+                <div class="usp-card">
+                    <i class="fas fa-shipping-fast"></i>
+                    <div>
+                        <h3>Snelle Levering</h3>
+                        <p>Binnen 1-2 werkdagen in huis</p>
+                    </div>
+                </div>
+                <div class="usp-card">
+                    <i class="fas fa-headset"></i>
+                    <div>
+                        <h3>Deskundig Advies</h3>
+                        <p>Altijd persoonlijk contact</p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Featured Products -->
-    <section class="featured-section">
+    <section class="products-section">
         <div class="container">
             <div class="section-header">
-                <span class="section-badge">Onze Collectie</span>
+                <span class="section-tag">Onze Collectie</span>
                 <h2 class="section-title">Populaire Producten</h2>
                 <p class="section-subtitle">De favorieten van onze klanten</p>
             </div>
-            
             <div class="products-grid" id="featuredProducts">
-                <!-- Products will be loaded by JavaScript -->
+                <!-- Products loaded by JS -->
             </div>
-            
-            <div class="section-footer">
+            <div class="section-header" style="margin-top: 3rem;">
                 <a href="shop.html" class="btn btn-outline">
-                    <span>Bekijk Alle Producten</span>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                    <i class="fas fa-th-large"></i> Bekijk Alle Producten
                 </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Features Section -->
-    <section class="features-section">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-badge">Waarom WY?</span>
-                <h2 class="section-title">Waarom Kiezen Voor Ons?</h2>
-            </div>
-            
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
-                    </div>
-                    <h3>Premium Kwaliteit</h3>
-                    <p>Alleen de beste ingrediënten voor professionele resultaten</p>
-                </div>
-                
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>
-                    </div>
-                    <h3>Gratis Verzending</h3>
-                    <p>Vanaf €50,- gratis verzending binnen Nederland</p>
-                </div>
-                
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"></line><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
-                    </div>
-                    <h3>Prijs-Kwaliteit</h3>
-                    <p>Professionele producten tegen eerlijke prijzen</p>
-                </div>
-                
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"></path></svg>
-                    </div>
-                    <h3>Nederlands Merk</h3>
-                    <p>Ontwikkeld en geproduceerd in Nederland</p>
-                </div>
             </div>
         </div>
     </section>
 
     <!-- CTA Section -->
     <section class="cta-section">
-        <div class="cta-bg"></div>
         <div class="container">
-            <div class="cta-content glass">
-                <h2>Klaar Om Je Auto Te laten Stralen?</h2>
-                <p>Ontdek onze complete lijn van premium auto verzorgingsproducten</p>
-                <a href="shop.html" class="btn btn-primary btn-lg">
-                    <span>Shop Nu</span>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+            <div class="cta-content">
+                <span class="section-tag" style="color: var(--accent-light);">Klaar om te beginnen?</span>
+                <h2 class="section-title">Geef je auto de verzorging die hij verdient</h2>
+                <p class="section-subtitle" style="color: var(--gray-300);">
+                    Ontdek onze complete lijn van premium auto verzorgingsproducten en zie het verschil.
+                </p>
+                <a href="shop.html" class="btn btn-white btn-large">
+                    <i class="fas fa-shopping-bag"></i> Shop Nu
                 </a>
             </div>
         </div>
@@ -173,25 +225,19 @@
             <div class="footer-grid">
                 <div class="footer-brand">
                     <a href="index.html" class="logo">
-                        <span class="logo-wy">WY</span>
-                        <span class="logo-text">Cleaning</span>
+                        <div class="logo-icon"><i class="fas fa-spray-can"></i></div>
+                        <span>WY Cleaning</span>
                     </a>
                     <p>Premium auto verzorgingsproducten voor de ware liefhebber. Professionele resultaten, eenvoudig thuis.</p>
                     <div class="social-links">
-                        <a href="#" aria-label="Instagram">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
-                        </a>
-                        <a href="#" aria-label="Facebook">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
-                        </a>
-                        <a href="#" aria-label="YouTube">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.33 29 29 0 0 0-.46-5.33z"></path><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon></svg>
-                        </a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-tiktok"></i></a>
                     </div>
                 </div>
-                
                 <div class="footer-links">
-                    <h4>Pagina's</h4>
+                    <h4 class="footer-title">Pagina's</h4>
                     <ul>
                         <li><a href="index.html">Home</a></li>
                         <li><a href="shop.html">Webshop</a></li>
@@ -199,9 +245,17 @@
                         <li><a href="contact.html">Contact</a></li>
                     </ul>
                 </div>
-                
                 <div class="footer-links">
-                    <h4>Service</h4>
+                    <h4 class="footer-title">Producten</h4>
+                    <ul>
+                        <li><a href="shop.html">Wash & Shine</a></li>
+                        <li><a href="shop.html">Pre-Wash Degreaser</a></li>
+                        <li><a href="shop.html">Wheel Cleaner</a></li>
+                        <li><a href="shop.html">Interieur Cleaner</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4 class="footer-title">Service</h4>
                     <ul>
                         <li><a href="#">Verzending</a></li>
                         <li><a href="#">Retouren</a></li>
@@ -209,52 +263,36 @@
                         <li><a href="#">Garantie</a></li>
                     </ul>
                 </div>
-                
-                <div class="footer-contact">
-                    <h4>Contact</h4>
-                    <ul>
-                        <li>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
-                            <span>info@wycleaning.nl</span>
-                        </li>
-                        <li>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
-                            <span>Nederland</span>
-                        </li>
-                    </ul>
-                </div>
             </div>
-            
             <div class="footer-bottom">
                 <p>&copy; 2026 WY Cleaning Products. Alle rechten voorbehouden.</p>
-                <div class="payment-methods">
-                    <span class="payment-icon">💳</span>
-                    <span class="payment-icon">🟦</span>
-                    <span class="payment-icon">🟧</span>
-                </div>
             </div>
         </div>
     </footer>
 
-    <!-- Shopping Cart Sidebar -->
+    <!-- Cart Sidebar -->
     <div class="cart-overlay" id="cartOverlay"></div>
     <aside class="cart-sidebar" id="cartSidebar">
         <div class="cart-header">
-            <h3>Winkelwagen</h3>
-            <button class="cart-close" id="cartClose" aria-label="Sluit winkelwagen">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+            <h3><i class="fas fa-shopping-cart"></i> Winkelwagen</h3>
+            <button class="cart-close" id="cartClose">
+                <i class="fas fa-times"></i>
             </button>
         </div>
         <div class="cart-items" id="cartItems">
-            <!-- Cart items will be loaded here -->
+            <!-- Cart items loaded by JS -->
         </div>
         <div class="cart-footer">
             <div class="cart-total">
                 <span>Totaal</span>
                 <span class="cart-total-price" id="cartTotal">€0,00</span>
             </div>
-            <button class="btn btn-primary btn-full">Afrekenen</button>
-            <button class="btn btn-text" id="continueShopping">Verder winkelen</button>
+            <button class="btn btn-primary btn-full">
+                <i class="fas fa-credit-card"></i> Afrekenen
+            </button>
+            <button class="btn btn-secondary btn-full" id="continueShopping" style="margin-top: 0.5rem;">
+                Verder winkelen
+            </button>
         </div>
     </aside>
 

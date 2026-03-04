@@ -4,139 +4,173 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Webshop - WY Cleaning Products</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="css/styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <a href="index.html" class="logo">
-                <span class="logo-wy">WY</span>
-                <span class="logo-text">Cleaning</span>
-            </a>
-            
-            <ul class="nav-links" id="navLinks">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="shop.html" class="active">Webshop</a></li>
-                <li><a href="about.html">Over Ons</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-            
-            <div class="nav-actions">
-                <button class="cart-icon" id="cartIcon">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
-                    <span class="cart-count" id="cartCount">0</span>
-                </button>
-                <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
-                    <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
-                    <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
-                </button>
-                <button class="hamburger" id="hamburger" aria-label="Menu">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
-            </div>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <nav class="nav">
+                <a href="index.html" class="logo">
+                    <div class="logo-icon"><i class="fas fa-spray-can"></i></div>
+                    <span>WY Cleaning</span>
+                </a>
+                <ul class="nav-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li class="has-dropdown">
+                        <a href="#" class="dropdown-toggle active">Producten <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="shop.html"><i class="fas fa-car-side"></i> Exterieur</a></li>
+                            <li><a href="shop.html"><i class="fas fa-chair"></i> Interieur</a></li>
+                            <li><a href="shop.html"><i class="fas fa-shield-alt"></i> Bescherming</a></li>
+                            <li><a href="shop.html"><i class="fas fa-box-open"></i> Alle Producten</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="shop.html" class="active">Webshop</a></li>
+                    <li><a href="about.html">Over Ons</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+                <div class="nav-actions">
+                    <button class="cart-btn" id="cartBtn">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-count" id="cartCount">0</span>
+                    </button>
+                    <button class="mobile-menu-btn" id="mobileMenuBtn">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </nav>
         </div>
+    </header>
+
+    <!-- Mobile Navigation -->
+    <div class="mobile-nav-overlay" id="mobileNavOverlay"></div>
+    <nav class="mobile-nav" id="mobileNav">
+        <div class="mobile-nav-header">
+            <a href="index.html" class="logo">
+                <div class="logo-icon"><i class="fas fa-spray-can"></i></div>
+                <span>WY Cleaning</span>
+            </a>
+            <button class="mobile-nav-close" id="mobileNavClose">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <ul class="mobile-nav-menu">
+            <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+            <li>
+                <button class="mobile-dropdown-toggle" id="mobileDropdownToggle">
+                    Producten <i class="fas fa-chevron-down"></i>
+                </button>
+                <ul class="mobile-dropdown-menu" id="mobileDropdownMenu">
+                    <li><a href="shop.html"><i class="fas fa-car-side"></i> Exterieur</a></li>
+                    <li><a href="shop.html"><i class="fas fa-chair"></i> Interieur</a></li>
+                    <li><a href="shop.html"><i class="fas fa-shield-alt"></i> Bescherming</a></li>
+                </ul>
+            </li>
+            <li><a href="shop.html" class="active"><i class="fas fa-shopping-cart"></i> Webshop</a></li>
+            <li><a href="about.html"><i class="fas fa-info-circle"></i> Over Ons</a></li>
+            <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
+        </ul>
     </nav>
 
-    <!-- Shop Header -->
-    <section class="page-header">
+    <!-- Page Header -->
+    <section class="hero" style="min-height: 50vh; padding-top: 140px;">
+        <div class="hero-pattern"></div>
         <div class="container">
-            <div class="breadcrumb">
-                <a href="index.html">Home</a>
-                <span>/</span>
-                <span>Webshop</span>
+            <div class="hero-content" style="text-align: center; max-width: 800px; margin: 0 auto;">
+                <div class="hero-badge">
+                    <i class="fas fa-shopping-bag"></i> Premium Kwaliteit
+                </div>
+                <h1 class="hero-title">Onze Producten</h1>
+                <p class="hero-tagline">Professionele auto verzorgingsproducten voor de beste resultaten</p>
             </div>
-            <h1 class="page-title">Onze Producten</h1>
-            <p class="page-subtitle">Premium auto verzorgingsproducten voor professionals en liefhebbers</p>
         </div>
     </section>
 
     <!-- Shop Section -->
-    <section class="shop-section">
+    <section class="products-section" style="padding-top: 3rem;">
         <div class="container">
-            <div class="shop-layout">
+            <div class="shop-layout" style="display: grid; grid-template-columns: 260px 1fr; gap: 2rem;">
                 <!-- Sidebar Filters -->
-                <aside class="shop-sidebar">
-                    <div class="filter-section">
-                        <h4>Categorieën</h4>
-                        <ul class="filter-list">
-                            <li>
-                                <label class="filter-checkbox">
-                                    <input type="checkbox" checked data-filter="all">
+                <aside class="shop-sidebar" style="position: sticky; top: 100px; height: fit-content;">
+                    <div class="filter-section" style="background: var(--white); border-radius: 16px; padding: 1.5rem; box-shadow: var(--shadow-sm); margin-bottom: 1rem;">
+                        <h4 style="font-family: var(--font-heading); margin-bottom: 1rem;"><i class="fas fa-filter"></i> Categorieën</h4>
+                        <ul style="list-style: none;">
+                            <li style="margin-bottom: 0.75rem;">
+                                <label class="filter-checkbox" style="display: flex; align-items: center; gap: 0.5rem; cursor: pointer;">
+                                    <input type="checkbox" checked data-filter="all" style="accent-color: var(--accent);">
                                     <span>Alle Producten</span>
                                 </label>
                             </li>
-                            <li>
-                                <label class="filter-checkbox">
-                                    <input type="checkbox" data-filter="exterior">
-                                    <span>Exterieur</span>
+                            <li style="margin-bottom: 0.75rem;">
+                                <label class="filter-checkbox" style="display: flex; align-items: center; gap: 0.5rem; cursor: pointer;">
+                                    <input type="checkbox" data-filter="exterior" style="accent-color: var(--accent);">
+                                    <span><i class="fas fa-car-side" style="color: var(--accent);"></i> Exterieur</span>
                                 </label>
                             </li>
-                            <li>
-                                <label class="filter-checkbox">
-                                    <input type="checkbox" data-filter="interior">
-                                    <span>Interieur</span>
+                            <li style="margin-bottom: 0.75rem;">
+                                <label class="filter-checkbox" style="display: flex; align-items: center; gap: 0.5rem; cursor: pointer;">
+                                    <input type="checkbox" data-filter="interior" style="accent-color: var(--accent);">
+                                    <span><i class="fas fa-chair" style="color: var(--accent);"></i> Interieur</span>
                                 </label>
                             </li>
-                            <li>
-                                <label class="filter-checkbox">
-                                    <input type="checkbox" data-filter="protection">
-                                    <span>Bescherming</span>
+                            <li style="margin-bottom: 0.75rem;">
+                                <label class="filter-checkbox" style="display: flex; align-items: center; gap: 0.5rem; cursor: pointer;">
+                                    <input type="checkbox" data-filter="protection" style="accent-color: var(--accent);">
+                                    <span><i class="fas fa-shield-alt" style="color: var(--accent);"></i> Bescherming</span>
                                 </label>
                             </li>
                         </ul>
                     </div>
                     
-                    <div class="filter-section">
-                        <h4>Prijs</h4>
-                        <div class="price-range">
-                            <span>€0</span>
-                            <input type="range" min="0" max="35" value="35" id="priceRange">
-                            <span>€35</span>
+                    <div class="filter-section" style="background: var(--white); border-radius: 16px; padding: 1.5rem; box-shadow: var(--shadow-sm);">
+                        <h4 style="font-family: var(--font-heading); margin-bottom: 1rem;"><i class="fas fa-euro-sign"></i> Prijs</h4>
+                        <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
+                            <span style="font-size: 0.875rem; color: var(--gray-500);">€0</span>
+                            <input type="range" min="0" max="35" value="35" id="priceRange" style="flex: 1; accent-color: var(--accent);">
+                            <span style="font-size: 0.875rem; color: var(--gray-500);">€35</span>
                         </div>
-                        <p class="price-value">Max: <span id="priceValue">€35</span></p>
-                    </div>
-                    
-                    <div class="filter-section">
-                        <h4>Sorteren</h4>
-                        <select class="sort-select" id="sortSelect">
-                            <option value="default">Standaard</option>
-                            <option value="price-low">Prijs: Laag naar Hoog</option>
-                            <option value="price-high">Prijs: Hoog naar Laag</option>
-                            <option value="name">Naam: A-Z</option>
-                        </select>
+                        <p style="font-size: 0.875rem; color: var(--gray-600);">Max: <span id="priceValue">€35</span></p>
                     </div>
                 </aside>
                 
-                <!-- Product Grid -->
-                <div class="shop-content">
-                    <div class="shop-toolbar">
-                        <span class="results-count"><span id="productCount">6</span> producten</span>
+                <!-- Products Grid -->
+                <div>
+                    <div class="shop-header" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem;">
+                        <p style="color: var(--gray-500);"><span id="productCount">6</span> producten</p>
+                        <div style="display: flex; align-items: center; gap: 0.5rem;">
+                            <span style="font-size: 0.875rem; color: var(--gray-500);">Sorteren:</span>
+                            <select style="padding: 0.5rem 1rem; border: 1px solid var(--gray-200); border-radius: 8px; background: var(--white); font-size: 0.875rem;">
+                                <option>Populair</option>
+                                <option>Prijs: Laag - Hoog</option>
+                                <option>Prijs: Hoog - Laag</option>
+                                <option>Naam: A-Z</option>
+                            </select>
+                        </div>
                     </div>
                     
                     <div class="products-grid" id="shopProducts">
-                        <!-- Products will be loaded by JavaScript -->
+                        <!-- Products loaded by JS -->
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Newsletter Section -->
-    <section class="newsletter-section">
+    <!-- CTA Section -->
+    <section class="cta-section">
         <div class="container">
-            <div class="newsletter-content glass">
-                <div class="newsletter-text">
-                    <h3>Blijf Op De Hoogte</h3>
-                    <p>Schrijf je in voor onze nieuwsbrief en ontvang exclusieve aanbiedingen en nieuws.</p>
-                </div>
-                <form class="newsletter-form">
-                    <input type="email" placeholder="Je e-mailadres" required>
-                    <button type="submit" class="btn btn-primary">Inschrijven</button>
-                </form>
+            <div class="cta-content">
+                <h2 class="section-title">Niet gevonden wat je zoekt?</h2>
+                <p class="section-subtitle" style="color: var(--gray-300);">
+                    Neem contact met ons op voor persoonlijk advies.
+                </p>
+                <a href="contact.html" class="btn btn-white btn-large">
+                    <i class="fas fa-envelope"></i> Contact Opnemen
+                </a>
             </div>
         </div>
     </section>
@@ -147,17 +181,18 @@
             <div class="footer-grid">
                 <div class="footer-brand">
                     <a href="index.html" class="logo">
-                        <span class="logo-wy">WY</span>
-                        <span class="logo-text">Cleaning</span>
+                        <div class="logo-icon"><i class="fas fa-spray-can"></i></div>
+                        <span>WY Cleaning</span>
                     </a>
                     <p>Premium auto verzorgingsproducten voor de ware liefhebber.</p>
                     <div class="social-links">
-                        <a href="#" aria-label="Instagram"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path></svg></a>
-                        <a href="#" aria-label="Facebook"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
                     </div>
                 </div>
                 <div class="footer-links">
-                    <h4>Pagina's</h4>
+                    <h4 class="footer-title">Pagina's</h4>
                     <ul>
                         <li><a href="index.html">Home</a></li>
                         <li><a href="shop.html">Webshop</a></li>
@@ -166,18 +201,19 @@
                     </ul>
                 </div>
                 <div class="footer-links">
-                    <h4>Service</h4>
+                    <h4 class="footer-title">Producten</h4>
+                    <ul>
+                        <li><a href="shop.html">Exterieur</a></li>
+                        <li><a href="shop.html">Interieur</a></li>
+                        <li><a href="shop.html">Bescherming</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4 class="footer-title">Service</h4>
                     <ul>
                         <li><a href="#">Verzending</a></li>
                         <li><a href="#">Retouren</a></li>
                         <li><a href="#">FAQ</a></li>
-                    </ul>
-                </div>
-                <div class="footer-contact">
-                    <h4>Contact</h4>
-                    <ul>
-                        <li><span>info@wycleaning.nl</span></li>
-                        <li><span>Nederland</span></li>
                     </ul>
                 </div>
             </div>
@@ -191,8 +227,8 @@
     <div class="cart-overlay" id="cartOverlay"></div>
     <aside class="cart-sidebar" id="cartSidebar">
         <div class="cart-header">
-            <h3>Winkelwagen</h3>
-            <button class="cart-close" id="cartClose">&times;</button>
+            <h3><i class="fas fa-shopping-cart"></i> Winkelwagen</h3>
+            <button class="cart-close" id="cartClose"><i class="fas fa-times"></i></button>
         </div>
         <div class="cart-items" id="cartItems"></div>
         <div class="cart-footer">
@@ -200,8 +236,8 @@
                 <span>Totaal</span>
                 <span class="cart-total-price" id="cartTotal">€0,00</span>
             </div>
-            <button class="btn btn-primary btn-full">Afrekenen</button>
-            <button class="btn btn-text" id="continueShopping">Verder winkelen</button>
+            <button class="btn btn-primary btn-full"><i class="fas fa-credit-card"></i> Afrekenen</button>
+            <button class="btn btn-secondary btn-full" id="continueShopping" style="margin-top: 0.5rem;">Verder winkelen</button>
         </div>
     </aside>
 
