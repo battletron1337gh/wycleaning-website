@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Webshop - WY Cleaning Products</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <span class="logo-wy">WY</span>
+                <span class="logo-text">Cleaning</span>
+            </a>
+            
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="shop.html" class="active">Webshop</a></li>
+                <li><a href="about.html">Over Ons</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            
+            <div class="nav-actions">
+                <button class="cart-icon" id="cartIcon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
+                    <span class="cart-count" id="cartCount">0</span>
+                </button>
+                <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+                    <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+                    <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+                </button>
+                <button class="hamburger" id="hamburger" aria-label="Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Shop Header -->
+    <section class="page-header">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="index.html">Home</a>
+                <span>/</span>
+                <span>Webshop</span>
+            </div>
+            <h1 class="page-title">Onze Producten</h1>
+            <p class="page-subtitle">Premium auto verzorgingsproducten voor professionals en liefhebbers</p>
+        </div>
+    </section>
+
+    <!-- Shop Section -->
+    <section class="shop-section">
+        <div class="container">
+            <div class="shop-layout">
+                <!-- Sidebar Filters -->
+                <aside class="shop-sidebar">
+                    <div class="filter-section">
+                        <h4>Categorieën</h4>
+                        <ul class="filter-list">
+                            <li>
+                                <label class="filter-checkbox">
+                                    <input type="checkbox" checked data-filter="all">
+                                    <span>Alle Producten</span>
+                                </label>
+                            </li>
+                            <li>
+                                <label class="filter-checkbox">
+                                    <input type="checkbox" data-filter="exterior">
+                                    <span>Exterieur</span>
+                                </label>
+                            </li>
+                            <li>
+                                <label class="filter-checkbox">
+                                    <input type="checkbox" data-filter="interior">
+                                    <span>Interieur</span>
+                                </label>
+                            </li>
+                            <li>
+                                <label class="filter-checkbox">
+                                    <input type="checkbox" data-filter="protection">
+                                    <span>Bescherming</span>
+                                </label>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div class="filter-section">
+                        <h4>Prijs</h4>
+                        <div class="price-range">
+                            <span>€0</span>
+                            <input type="range" min="0" max="35" value="35" id="priceRange">
+                            <span>€35</span>
+                        </div>
+                        <p class="price-value">Max: <span id="priceValue">€35</span></p>
+                    </div>
+                    
+                    <div class="filter-section">
+                        <h4>Sorteren</h4>
+                        <select class="sort-select" id="sortSelect">
+                            <option value="default">Standaard</option>
+                            <option value="price-low">Prijs: Laag naar Hoog</option>
+                            <option value="price-high">Prijs: Hoog naar Laag</option>
+                            <option value="name">Naam: A-Z</option>
+                        </select>
+                    </div>
+                </aside>
+                
+                <!-- Product Grid -->
+                <div class="shop-content">
+                    <div class="shop-toolbar">
+                        <span class="results-count"><span id="productCount">6</span> producten</span>
+                    </div>
+                    
+                    <div class="products-grid" id="shopProducts">
+                        <!-- Products will be loaded by JavaScript -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter-section">
+        <div class="container">
+            <div class="newsletter-content glass">
+                <div class="newsletter-text">
+                    <h3>Blijf Op De Hoogte</h3>
+                    <p>Schrijf je in voor onze nieuwsbrief en ontvang exclusieve aanbiedingen en nieuws.</p>
+                </div>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Je e-mailadres" required>
+                    <button type="submit" class="btn btn-primary">Inschrijven</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="logo">
+                        <span class="logo-wy">WY</span>
+                        <span class="logo-text">Cleaning</span>
+                    </a>
+                    <p>Premium auto verzorgingsproducten voor de ware liefhebber.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Instagram"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path></svg></a>
+                        <a href="#" aria-label="Facebook"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4>Pagina's</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="shop.html">Webshop</a></li>
+                        <li><a href="about.html">Over Ons</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Service</h4>
+                    <ul>
+                        <li><a href="#">Verzending</a></li>
+                        <li><a href="#">Retouren</a></li>
+                        <li><a href="#">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li><span>info@wycleaning.nl</span></li>
+                        <li><span>Nederland</span></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 WY Cleaning Products. Alle rechten voorbehouden.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Cart Sidebar -->
+    <div class="cart-overlay" id="cartOverlay"></div>
+    <aside class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h3>Winkelwagen</h3>
+            <button class="cart-close" id="cartClose">&times;</button>
+        </div>
+        <div class="cart-items" id="cartItems"></div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Totaal</span>
+                <span class="cart-total-price" id="cartTotal">€0,00</span>
+            </div>
+            <button class="btn btn-primary btn-full">Afrekenen</button>
+            <button class="btn btn-text" id="continueShopping">Verder winkelen</button>
+        </div>
+    </aside>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
