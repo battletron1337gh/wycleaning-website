@@ -24,7 +24,7 @@
                 <ul class="nav-menu">
                     <li><a href="index.html" class="active">Home</a></li>
                     <li class="has-dropdown">
-                        <a href="#" class="dropdown-toggle">Producten <i class="fas fa-chevron-down"></i></a>
+                        <a class="dropdown-toggle">Producten <i class="fas fa-chevron-down"></i></a>
                         <ul class="dropdown-menu">
                             <li><a href="shop.html"><i class="fas fa-car-side"></i> Exterieur</a></li>
                             <li><a href="shop.html"><i class="fas fa-chair"></i> Interieur</a></li>
@@ -86,49 +86,38 @@
     </nav>
 
     <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-pattern"></div>
-        <div class="container">
-            <div class="hero-content">
-                <div class="hero-badge">
-                    <i class="fas fa-star"></i> #1 Auto Detailing Producten in Nederland
-                </div>
-                <h1 class="hero-title">
-                    Professionele <span class="highlight">car care</span> voor iedereen
-                </h1>
-                <p class="hero-tagline">
-                    Ontdek onze premium lijn van auto reinigingsproducten. Professionele resultaten, eenvoudig thuis te gebruiken.
-                </p>
-                <div class="hero-buttons">
-                    <a href="shop.html" class="btn btn-primary btn-large">
-                        <i class="fas fa-shopping-bag"></i> Bekijk Producten
-                    </a>
-                    <a href="about.html" class="btn btn-secondary btn-large">
-                        <i class="fas fa-info-circle"></i> Meer Over Ons
-                    </a>
-                </div>
-                <div class="hero-trust">
-                    <div class="trust-item">
-                        <i class="fas fa-truck"></i>
-                        <span>Gratis verzending vanaf €50</span>
-                    </div>
-                    <div class="trust-item">
-                        <i class="fas fa-check-circle"></i>
-                        <span>100% Nederlandse kwaliteit</span>
-                    </div>
-                    <div class="trust-item">
-                        <i class="fas fa-undo"></i>
-                        <span>30 dagen retourrecht</span>
-                    </div>
-                </div>
+    <section class="hero-modern">
+        <div class="hero-content-modern">
+            <div class="hero-badge-modern">
+                <i class="fas fa-star"></i> #1 Auto Detailing Producten in Nederland
             </div>
-        </div>
-        <div class="hero-image">
-            <div class="hero-product-card">
-                <div class="hero-product-icon">🚗</div>
-                <span class="hero-product-label">Bestseller</span>
-                <div class="hero-product-name">Wash & Shine</div>
-                <div class="hero-product-price">€24,99</div>
+            <h1>
+                Professionele <span class="highlight">car care</span> voor iedereen
+            </h1>
+            <p class="hero-tagline-modern">
+                Ontdek onze premium lijn van auto reinigingsproducten. Professionele resultaten, eenvoudig thuis te gebruiken.
+            </p>
+            <div class="hero-buttons-modern">
+                <a href="shop.html" class="btn btn-primary btn-large">
+                    <i class="fas fa-shopping-bag"></i> Bekijk Producten
+                </a>
+                <a href="about.html" class="btn btn-secondary btn-large">
+                    <i class="fas fa-info-circle"></i> Meer Over Ons
+                </a>
+            </div>
+            <div class="hero-trust">
+                <div class="trust-item">
+                    <i class="fas fa-truck"></i>
+                    <span>Gratis verzending vanaf €50</span>
+                </div>
+                <div class="trust-item">
+                    <i class="fas fa-check-circle"></i>
+                    <span>100% Nederlandse kwaliteit</span>
+                </div>
+                <div class="trust-item">
+                    <i class="fas fa-undo"></i>
+                    <span>30 dagen retourrecht</span>
+                </div>
             </div>
         </div>
         <a href="#usp" class="scroll-down">
@@ -139,7 +128,7 @@
     <!-- USP Section -->
     <section class="usp-section" id="usp">
         <div class="container">
-            <div class="section-header">
+            <div class="section-header-modern">
                 <span class="section-tag">Waarom WY Cleaning</span>
                 <h2 class="section-title">De beste keuze voor jouw auto</h2>
                 <p class="section-subtitle">Kwaliteit en service staan bij ons voorop</p>
@@ -187,7 +176,7 @@
     <!-- Featured Products -->
     <section class="products-section">
         <div class="container">
-            <div class="section-header">
+            <div class="section-header-modern">
                 <span class="section-tag">Onze Collectie</span>
                 <h2 class="section-title">Populaire Producten</h2>
                 <p class="section-subtitle">De favorieten van onze klanten</p>
@@ -195,7 +184,7 @@
             <div class="products-grid" id="featuredProducts">
                 <!-- Products loaded by JS -->
             </div>
-            <div class="section-header" style="margin-top: 3rem;">
+            <div class="section-header-modern" style="margin-top: 3rem;">
                 <a href="shop.html" class="btn btn-outline">
                     <i class="fas fa-th-large"></i> Bekijk Alle Producten
                 </a>
@@ -207,12 +196,12 @@
     <section class="cta-section">
         <div class="container">
             <div class="cta-content">
-                <span class="section-tag" style="color: var(--accent-light);">Klaar om te beginnen?</span>
+                <span class="section-tag">Klaar om te beginnen?</span>
                 <h2 class="section-title">Geef je auto de verzorging die hij verdient</h2>
-                <p class="section-subtitle" style="color: var(--gray-300);">
+                <p class="section-subtitle">
                     Ontdek onze complete lijn van premium auto verzorgingsproducten en zie het verschil.
                 </p>
-                <a href="shop.html" class="btn btn-white btn-large">
+                <a href="shop.html" class="btn btn-secondary btn-large">
                     <i class="fas fa-shopping-bag"></i> Shop Nu
                 </a>
             </div>
@@ -290,7 +279,7 @@
             <button class="btn btn-primary btn-full">
                 <i class="fas fa-credit-card"></i> Afrekenen
             </button>
-            <button class="btn btn-secondary btn-full" id="continueShopping" style="margin-top: 0.5rem;">
+            <button class="btn btn-secondary" id="continueShopping" style="margin-top: 0.5rem; background: var(--gray-200); color: var(--gray-700);">
                 Verder winkelen
             </button>
         </div>

@@ -1,9 +1,7 @@
 /**
  * WY Cleaning Products - Main JavaScript
- * Gebaseerd op professionele auto-service template stijl
  */
 
-// Product Data
 const products = [
     { id: 1, name: "Wash & Shine", category: "exterior", price: 24.99, description: "Kant-en-klare auto reiniger. Spray, wacht 2 minuten, afspuiten. Glanzend resultaat!", emoji: "🚗", badge: "Bestseller" },
     { id: 2, name: "Pre-Wash Degreaser", category: "exterior", price: 19.99, description: "Krachtige ontvetter voor hardnekkig vuil, vliegjes en olie. Ook voor motoren!", emoji: "⚡", badge: null },
@@ -13,10 +11,8 @@ const products = [
     { id: 6, name: "Protection Spray", category: "protection", price: 29.99, description: "Langdurige beschermlaag voor lak en glans. Beschermt tot 3 maanden!", emoji: "🛡️", badge: "Premium" }
 ];
 
-// Cart State
 let cart = JSON.parse(localStorage.getItem('wy_cart')) || [];
 
-// DOM Ready
 document.addEventListener('DOMContentLoaded', () => {
     initMobileMenu();
     initCart();
@@ -24,7 +20,6 @@ document.addEventListener('DOMContentLoaded', () => {
     updateCartUI();
 });
 
-// Mobile Menu
 function initMobileMenu() {
     const mobileMenuBtn = document.getElementById('mobileMenuBtn');
     const mobileNav = document.getElementById('mobileNav');
@@ -63,12 +58,10 @@ function initMobileMenu() {
     }
 }
 
-// Cart Functions
 function initCart() {
     const cartBtn = document.getElementById('cartBtn');
-    const cartSidebar = document.getElementById('cartSidebar');
-    const cartOverlay = document.getElementById('cartOverlay');
     const cartClose = document.getElementById('cartClose');
+    const cartOverlay = document.getElementById('cartOverlay');
     const continueShopping = document.getElementById('continueShopping');
 
     if (cartBtn) {
@@ -78,17 +71,9 @@ function initCart() {
         });
     }
 
-    if (cartClose) {
-        cartClose.addEventListener('click', closeCart);
-    }
-
-    if (cartOverlay) {
-        cartOverlay.addEventListener('click', closeCart);
-    }
-
-    if (continueShopping) {
-        continueShopping.addEventListener('click', closeCart);
-    }
+    if (cartClose) cartClose.addEventListener('click', closeCart);
+    if (cartOverlay) cartOverlay.addEventListener('click', closeCart);
+    if (continueShopping) continueShopping.addEventListener('click', closeCart);
 
     document.addEventListener('keydown', (e) => {
         if (e.key === 'Escape') closeCart();
@@ -96,18 +81,14 @@ function initCart() {
 }
 
 function openCart() {
-    const cartSidebar = document.getElementById('cartSidebar');
-    const cartOverlay = document.getElementById('cartOverlay');
-    if (cartSidebar) cartSidebar.classList.add('active');
-    if (cartOverlay) cartOverlay.classList.add('active');
+    document.getElementById('cartSidebar')?.classList.add('active');
+    document.getElementById('cartOverlay')?.classList.add('active');
     document.body.style.overflow = 'hidden';
 }
 
 function closeCart() {
-    const cartSidebar = document.getElementById('cartSidebar');
-    const cartOverlay = document.getElementById('cartOverlay');
-    if (cartSidebar) cartSidebar.classList.remove('active');
-    if (cartOverlay) cartOverlay.classList.remove('active');
+    document.getElementById('cartSidebar')?.classList.remove('active');
+    document.getElementById('cartOverlay')?.classList.remove('active');
     document.body.style.overflow = '';
 }
 
@@ -116,7 +97,6 @@ function addToCart(productId, quantity = 1) {
     if (!product) return;
 
     const existingItem = cart.find(item => item.id === productId);
-
     if (existingItem) {
         existingItem.quantity += quantity;
     } else {
@@ -174,7 +154,7 @@ function updateCartUI() {
                 <div class="cart-empty">
                     <i class="fas fa-shopping-cart"></i>
                     <p>Je winkelwagen is leeg</p>
-                    <a href="shop.html" class="btn btn-primary" style="margin-top: 1rem;">
+                    <a href="shop.html" class="btn btn-primary" style="margin-top: 1rem;" onclick="closeCart()">
                         <i class="fas fa-shopping-bag"></i> Ga naar shop
                     </a>
                 </div>
@@ -186,22 +166,19 @@ function updateCartUI() {
                     <div class="cart-item-details">
                         <div class="cart-item-name">${item.name}</div>
                         <div class="cart-item-price">€${item.price.toFixed(2).replace('.', ',')}</div>
-                        <div style="display: flex; align-items: center; gap: 0.5rem; margin-top: 0.5rem;">
-                            <div class="quantity-selector">
-                                <button class="quantity-btn" onclick="updateQuantity(${item.id}, ${item.quantity - 1})"><i class="fas fa-minus"></i></button>
-                                <input type="text" value="${item.quantity}" readonly>
-                                <button class="quantity-btn" onclick="updateQuantity(${item.id}, ${item.quantity + 1})"><i class="fas fa-plus"></i></button>
-                            </div>
-                            <button class="cart-item-remove" onclick="removeFromCart(${item.id})"><i class="fas fa-trash"></i></button>
+                        <div class="quantity-selector">
+                            <button class="quantity-btn" onclick="updateQuantity(${item.id}, ${item.quantity - 1})"><i class="fas fa-minus"></i></button>
+                            <input type="text" value="${item.quantity}" readonly>
+                            <button class="quantity-btn" onclick="updateQuantity(${item.id}, ${item.quantity + 1})"><i class="fas fa-plus"></i></button>
                         </div>
                     </div>
+                    <button class="cart-item-remove" onclick="removeFromCart(${item.id})"><i class="fas fa-trash"></i></button>
                 </div>
             `).join('');
         }
     }
 }
 
-// Render Products
 function renderProducts() {
     const featuredContainer = document.getElementById('featuredProducts');
     const shopContainer = document.getElementById('shopProducts');
@@ -241,7 +218,6 @@ function getCategoryName(category) {
     return names[category] || category;
 }
 
-// Filters
 function initFilters() {
     const filterCheckboxes = document.querySelectorAll('.filter-checkbox input');
     const priceRange = document.getElementById('priceRange');
@@ -276,7 +252,6 @@ function applyFilters() {
     });
 }
 
-// Toast Notifications
 function showToast(message, type = 'success') {
     let container = document.querySelector('.toast-container');
     if (!container) {
@@ -287,11 +262,7 @@ function showToast(message, type = 'success') {
 
     const toast = document.createElement('div');
     toast.className = `toast ${type}`;
-    toast.innerHTML = `
-        <i class="fas fa-${type === 'success' ? 'check-circle' : 'exclamation-circle'}"></i>
-        <span>${message}</span>
-    `;
-
+    toast.innerHTML = `<i class="fas fa-${type === 'success' ? 'check-circle' : 'exclamation-circle'}"></i><span>${message}</span>`;
     container.appendChild(toast);
 
     setTimeout(() => {
@@ -301,7 +272,6 @@ function showToast(message, type = 'success') {
     }, 3000);
 }
 
-// Contact Form
 const contactForm = document.getElementById('contactForm');
 if (contactForm) {
     contactForm.addEventListener('submit', (e) => {
